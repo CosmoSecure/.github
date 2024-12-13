@@ -1,11 +1,9 @@
 ![CosmoSecure](../assets/CosmoSecure.png)
-
-# Welcome to CosmoSecure: The Next-Generation Password Manager
-
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/CosmoSecure/CosmoSecure/total?style=plastic)
 ![GitHub License](https://img.shields.io/github/license/CosmoSecure/.gitignore?style=social)
 ![Platform Compatibility](https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux-green)
 
+# Welcome to CosmoSecure: The Next-Generation Password Manager
 
 **CosmoSecure** is an open-source, cross-platform password manager designed to protect your credentials effortlessly. Built with modern technologies like **Tauri**, **Rust**, and **React**, it ensures robust performance, top-notch security, and an intuitive user experience. Whether you're an individual or a team, CosmoSecure is the tool you can rely on.
 
