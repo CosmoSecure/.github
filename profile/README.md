@@ -80,6 +80,10 @@ This project is licensed under the **Apache License**. See the [LICENSE](LICENSE
 - Email us at [aakash.soni8781@gmail.com](mailto:aakash.soni8781@gmail.com) for questions or suggestions.
 - Have an issue or feature request? Open an issue on GitHub: [CosmoSecure Issues](https://github.com/CosmoSecure/CosmoSecure/issues).
 
+<p align="center">
+<a  href="https://www.buymeacoffee.com/akash2061"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a Coffee&emoji=☕&slug=akash2061&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+</p>
+
 ---
 
 ## 🌟 Thank You!
