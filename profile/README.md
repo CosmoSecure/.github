@@ -42,6 +42,7 @@ CosmoSecure has been successfully tested on the following operating systems:
   - **Ubuntu** (22.04 LTS, 20.04 LTS)
   - **Kali Linux** (2023)
   - **Debian** (11)
+  - **RHEL** (9)
 
 ---
 
