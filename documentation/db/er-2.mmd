@@ -1,0 +1,69 @@
+erDiagram
+    User {
+        string ui PK "User ID (Primary Key)"
+        string username UK "Username (Unique)"
+        string n "Name"
+        array hp "Hashed Password Entries"
+        string email UK "Email (Unique)"
+        DateTime c "Created At"
+        DateTime l "Last Login (Optional)"
+        u8 uc "Username Change Count"
+        array pc "Password Count [Current, Max]"
+    }
+
+    HashedPasswordEntry {
+        string ph "Password Hash (Email Auth)"
+        object mp "Master Password Auth"
+    }
+
+    MasterPasswordAuth {
+        string ph "Password Hash (Argon2)"
+        string s "Salt"
+        DateTime c "Created At"
+    }
+
+    PasswordEntries {
+        string ui FK "User ID (Foreign Key)"
+        array entries "Password Entries Array"
+    }
+
+    PasswordEntry {
+        string aid PK "Entry ID (Primary Key)"
+        string an "Account Name"
+        string aun "Account Username"
+        string ap "Encrypted Password (ZKP)"
+        DateTime ac "Created At"
+        u8 aps "Password Strength (Optional)"
+        DateTime lup "Last Update"
+        object d "Deleted Info (Optional)"
+    }
+
+    DeletedPasswordEntry {
+        bool del "Is Deleted"
+        DateTime d_at "Deleted At"
+    }
+
+    DeletedUser {
+        string ui PK "User ID (Primary Key)"
+        string un "Username"
+        string n "Name"
+        array hp "Hashed Password Entries"
+        string e "Email"
+        DateTime d "Deleted At"
+        array pass "Password Entries"
+    }
+
+    %% Relationships
+    User ||--o{ PasswordEntries : "owns"
+    User ||--o{ HashedPasswordEntry : "contains"
+    HashedPasswordEntry ||--|| MasterPasswordAuth : "includes"
+    PasswordEntries ||--o{ PasswordEntry : "contains"
+    PasswordEntry ||--o| DeletedPasswordEntry : "may_have"
+    User ||--o| DeletedUser : "becomes_when_deleted"
+
+    %% Collections Overview:
+    %% User: Main user collection with ZKP authentication
+    %% PasswordEntries: Separate collection for encrypted password storage
+    %% DeletedUser: Archive collection for soft-deleted users
+    %% MasterPasswordAuth: ZKP master password verification structure
+    %% PasswordEntry: Client-side encrypted password entries
