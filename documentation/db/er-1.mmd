@@ -1,0 +1,53 @@
+---
+config:
+  theme: dark
+---
+erDiagram
+    User {
+        string user_id PK "Unique identifier"
+        string username "Encrypted username"
+        string name "Name"
+        string email "Email address"
+        DateTime created_at "Account creation timestamp"
+        DateTime last_login "Last login timestamp (optional)"
+        u8 username_change_count "Username change count"
+        u16_array password_count "Password count [Current, Max]"
+    }
+    HashedPasswordEntry {
+        string password_hash "Argon2 hash for authentication"
+    }
+    MasterPasswordAuth {
+        string password_hash "Argon2 hash for authentication only"
+        string salt "Salt for hashing"
+        DateTime created_at "Creation timestamp"
+    }
+    PasswordEntries {
+        string user_id FK "Reference to user"
+    }
+    PasswordEntry {
+        string entry_id PK "Unique identifier for entry"
+        string account_name "Encrypted account name"
+        string username "Encrypted username for account"
+        string password "Encrypted password"
+        DateTime created_at "Entry creation timestamp"
+        u8 password_strength "Password strength rating (optional)"
+        DateTime last_update "Last update timestamp"
+    }
+    DeletedPasswordEntry {
+        bool deleted "Deletion flag"
+        DateTime deleted_at "Deletion timestamp"
+    }
+    DeletedUser {
+        string user_id PK "Unique identifier"
+        string username "Encrypted username"
+        string name "Name"
+        string hashed_password "Hashed password"
+        string email "Email address"
+        DateTime deleted_at "Deletion timestamp"
+    }
+    User ||--o{ HashedPasswordEntry : "has multiple hashed passwords"
+    HashedPasswordEntry ||--|| MasterPasswordAuth : "contains master auth"
+    User ||--|| PasswordEntries : "owns"
+    PasswordEntries ||--o{ PasswordEntry : "contains"
+    PasswordEntry ||--o| DeletedPasswordEntry : "may have deletion info"
+    DeletedUser ||--o{ PasswordEntry : "had passwords before deletion"
