@@ -1,6 +1,8 @@
 ![CosmoSecure](../assets/CosmoSecure.png)
+<!-- 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/CosmoSecure/CosmoSecure/total?style=plastic)
-![GitHub License](https://img.shields.io/github/license/CosmoSecure/.gitignore?style=social)
+-->
+![GitHub License](https://img.shields.io/github/license/CosmoSecure/.github?style=social)
 ![Platform Compatibility](https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux-green)
 
 # Welcome to CosmoSecure: The Next-Generation Password Manager
@@ -82,7 +84,7 @@ This project is licensed under the **Apache License**. See the [LICENSE](LICENSE
 - Have an issue or feature request? Open an issue on GitHub: [CosmoSecure Issues](https://github.com/CosmoSecure/CosmoSecure/issues).
 
 <p align="center">
-<a  href="https://www.buymeacoffee.com/akash2061"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a Coffee&emoji=☕&slug=akash2061&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+    <a href="https://www.buymeacoffee.com/akash2061"><img width="200" src="https://github.com/akash2061/akash2061/blob/main/icons/bmc-button.png" /></a>
 </p>
 
 ---
